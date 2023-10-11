@@ -10,7 +10,7 @@ import django
 
 from py2neo import Node, Relationship, Graph, NodeMatcher, RelationshipMatcher#导入我们需要的头文件
 
-from asset import People, Event
+import asset
 
 user     = "neo4j"            # your user name
 password = "111qqq..."
@@ -33,4 +33,4 @@ django.setup()
 from app.models import People
 
 for p in People.objects.all():
-    print(p)
+    asset.People(G, p.name, id=p.id.__str__())
