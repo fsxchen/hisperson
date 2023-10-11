@@ -1,0 +1,121 @@
+# Django
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.log
+*.bak
+*.swp
+*.swo
+*.swn
+*.pem
+*.csr
+*.key
+
+# Secret Key
+.secret_key
+
+# Media and Static files
+/media/
+/static/
+
+# Virtual Environment
+.env/
+venv/
+Pipfile.lock
+Pipfile.resolved
+
+# Local development settings
+settings/local.py
+
+# Temporary files
+*.tmp
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+
+# Compiled Python files
+*.pyc
+
+# Logs
+log/
+
+# Database
+db.sqlite3
+
+# PyCharm files
+.idea/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Caches
+.cash/
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Python tools
+.venv
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# PyUp
+pyup.yml
+.pyup.yml
+
+# Travis CI
+.travis.yml
+
+# Coverage
+.coverage
+.coverage.*
+
+# Elastic Beanstalk
+.elasticbeanstalk/
+
+# Vagrant
+.vagrant/
+
+# Heroku
+*.heroku/
+*heroku.yml
+*.heroku/*
+
+# Other
+*.bak
+*.class
+*.db
+*.dll
+*.exe
+*.log
+*.old
+*.swp
+*.tmp
+*.zip
+__pycache__
+htmlcov/
+.idea
+*.iml
+*.log
+*.sqlite
+*.sqlitedb
+*.sqlite3
+*.swp
+*.swo
+*.swn
+*.tmproj
+*.tmproj.lock
+*.tm_properties
+*.vscode
+
