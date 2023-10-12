@@ -34,3 +34,5 @@ from app.models import People
 
 for p in People.objects.all():
     asset.People(G, p.name, id=p.id.__str__())
+    if p.father != None:
+        asset.add_relationship(G, asset.People(G, p.name), asset.People(G, p.father.name), "fc")

@@ -1,4 +1,5 @@
 from py2neo import Node
+from py2neo import Relationship
 
 class People:
     def __init__(self, G, name, **kwargs):
@@ -44,3 +45,7 @@ class Event:
             node = Node("Event", name=self.name)
         self.node = node
         return node
+
+
+def add_relationship(G, n1, n2, relationship):
+    G.create(Relationship(n2.node, relationship, n1.node))
