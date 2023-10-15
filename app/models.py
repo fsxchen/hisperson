@@ -2,7 +2,7 @@
 Author: yangxingchen
 Date: 2023-09-23 17:16:06
 LastEditors: yangxingchen
-LastEditTime: 2023-10-15 10:45:27
+LastEditTime: 2023-10-15 10:56:25
 Description: 
 '''
 import uuid
@@ -32,7 +32,7 @@ class People(models.Model):
          default = uuid.uuid4,
          editable = False)
     name = models.CharField(max_length=255)
-    brief = models.TextField(verbose_name="简介")
+    brief = models.TextField(verbose_name="简介", blank=True, null=True)
     tags = TaggableManager()
     b_date = models.DateTimeField(verbose_name="birthday", blank=True, null=True)
     d_date= models.DateTimeField(verbose_name="death day", blank=True, null=True)
