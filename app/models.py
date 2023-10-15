@@ -2,14 +2,26 @@
 Author: yangxingchen
 Date: 2023-09-23 17:16:06
 LastEditors: yangxingchen
-LastEditTime: 2023-10-15 10:56:25
+LastEditTime: 2023-10-15 14:46:23
 Description: 
 '''
+
 import uuid
 from django.db import models
 from taggit.managers import TaggableManager
+from taggit.models import GenericUUIDTaggedItemBase, TaggedItemBase
+from django.utils.translation import gettext_lazy as _
 
 # Create your models here.
+
+class UUIDTaggedItem(GenericUUIDTaggedItemBase, TaggedItemBase):
+    # If you only inherit GenericUUIDTaggedItemBase, you need to define
+    # a tag field. e.g.
+    # tag = models.ForeignKey(Tag, related_name="uuid_tagged_items", on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name = _("Tag")
+        verbose_name_plural = _("Tags")
 
 
 class RelationShip(models.Model):
@@ -33,7 +45,7 @@ class People(models.Model):
          editable = False)
     name = models.CharField(max_length=255)
     brief = models.TextField(verbose_name="简介", blank=True, null=True)
-    tags = TaggableManager()
+    tags = TaggableManager(through=UUIDTaggedItem)
     b_date = models.DateTimeField(verbose_name="birthday", blank=True, null=True)
     d_date= models.DateTimeField(verbose_name="death day", blank=True, null=True)
     gender = models.CharField(verbose_name="gender", choices=GENDER_CHOICES, 
@@ -56,3 +68,4 @@ class Event(models.Model):
          default = uuid.uuid4,
          editable = False)
     name = models.CharField(max_length=255)
+    tags = TaggableManager(through=UUIDTaggedItem)
