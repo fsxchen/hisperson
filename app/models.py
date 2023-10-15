@@ -2,7 +2,7 @@
 Author: yangxingchen
 Date: 2023-09-23 17:16:06
 LastEditors: yangxingchen
-LastEditTime: 2023-10-15 14:46:23
+LastEditTime: 2023-10-15 15:15:30
 Description: 
 '''
 
@@ -29,7 +29,18 @@ class RelationShip(models.Model):
          primary_key = True,
          default = uuid.uuid4,
          editable = False)
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=20,  verbose_name="关系")
+    
+    fro = models.ForeignKey("People", on_delete=models.CASCADE,
+                                related_name="re_from", blank=True, null=True,
+                                verbose_name="from"
+                                )
+    
+    to = models.ForeignKey("People", on_delete=models.CASCADE,
+                                related_name="re_to", blank=True, null=True,
+                                verbose_name="to"
+                                )
+
 
 GENDER_CHOICES = (
     ("MALE", "Male"),
