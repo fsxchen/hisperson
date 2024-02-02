@@ -24,6 +24,11 @@ pip install -r requirements.txt
 python manage.py runserver
 ```
 
+## TODO
+-[ ] 添加关系
+-[ ] 添加人物
+-[ ] 添加地点
+
 
 ## 贡献
 
